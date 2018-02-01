@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.ktv.mengxiacheng.dao.ContactsRepository;
 import com.ktv.mengxiacheng.domain.Contact;
-import com.ktv.mengxiacheng.domain.ContactsRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
