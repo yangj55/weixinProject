@@ -51,6 +51,14 @@
             <artifactId>mssql-jdbc</artifactId>
             <scope>runtime</scope>
         </dependency>
+        
+        <!-- 开启热部署 便于调试  生产环境需要关闭 -->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <optional>true</optional>
+    </dependency>
+    
 	</dependencies>
 
 	<build>

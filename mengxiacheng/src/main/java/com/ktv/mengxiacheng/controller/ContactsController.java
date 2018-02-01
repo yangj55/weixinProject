@@ -3,27 +3,30 @@ package com.ktv.mengxiacheng.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ktv.mengxiacheng.dao.ContactsRepository;
 import com.ktv.mengxiacheng.domain.Contact;
+import com.ktv.mengxiacheng.domain.ContactsRepository;
 
 @RestController
+//@Controller
 @RequestMapping("/contacts")
 public class ContactsController {
     
     @Autowired
     ContactsRepository contactsRepository;
        
-    //ĞÂÔö
+    //æ–°å¢
     @RequestMapping(value="/save/new", method=RequestMethod.POST)
     public Contact saveNewContact(@RequestBody Contact contact) {return this.contactsRepository.save(contact);
     }
     
-    //¸üĞÂ
+    //æ›´æ–°
     @RequestMapping(value="/save/updated", method=RequestMethod.PUT)
     public Contact saveUpdatedContact(@RequestBody Contact contact) {
         Contact contactExisted = this.contactsRepository.findByName(contact.getName());
@@ -32,20 +35,21 @@ public class ContactsController {
         return this.contactsRepository.save(contactExisted);
     }
     
-    //É¾³ı
+    //åˆ é™¤
     @RequestMapping(value="/remove", method=RequestMethod.DELETE)
     public void removeContact(long id) {
         this.contactsRepository.delete(id);
     }
     
-    //²éÑ¯£¬Í¨¹ıname²éÑ¯Ò»Ìõ
+    //æŸ¥è¯¢ï¼Œé€šè¿‡nameæŸ¥è¯¢ä¸€æ¡
     @RequestMapping(value="/query/byname", method=RequestMethod.GET)
-    public Contact findContactByName(String name) {
+   public Contact findContactByName(@RequestParam("name")String name) {
+//   public Contact findContactByName() {
         Contact contact = this.contactsRepository.findByName(name);
         return contact;
     }
     
-    //²éÑ¯£¬Í¨¹ılike name²éÑ¯¶àÌõ
+    //æŸ¥è¯¢ï¼Œé€šè¿‡like nameæŸ¥è¯¢å¤šæ¡
     @RequestMapping(value="/query/likename", method=RequestMethod.GET)
     public List<Contact> findContactLikeName(String name) {
         String nameWhere = org.apache.commons.lang.StringUtils.join(new String[]{"%", name, "%"}, "");
