@@ -1,0 +1,21 @@
+logging: 
+  level: 
+    org.springframework.web: DEBUG
+    com.github.binarywang.demo.wechat: DEBUG
+
+wechat: 
+  mp: 
+    appId: wxda368ef8dc6da465
+    secret: d4624c36b6795d1d99dcf0547af5443d
+    token: weixinCourse
+    aesKey: 
+
+spring: 
+  datasource: 
+    url: jdbc:sqlserver://localhost:1433;DatabaseName=MXC
+    username: sa
+    password: yangjin2996
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    
+server: 
+  port: 80
