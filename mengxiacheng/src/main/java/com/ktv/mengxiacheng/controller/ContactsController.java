@@ -51,7 +51,7 @@ public class ContactsController {
     //查询，通过like name查询多条
     @RequestMapping(value="/query/likename", method=RequestMethod.GET)
     public List<Contact> findContactLikeName(String name) {
-        String nameWhere = org.apache.commons.lang.StringUtils.join(new String[]{"%", name, "%"}, "");
+        String nameWhere = org.apache.commons.lang3.StringUtils.join(new String[]{"%", name, "%"}, "");
         List<Contact> contacts = this.contactsRepository.findByNameLike(nameWhere);
         return contacts;
     }
