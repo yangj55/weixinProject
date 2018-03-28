@@ -1,4 +1,4 @@
-package com.github.binarywang.demo.wechat.handler;
+package com.ktv.mengxiacheng.handler;
 
 /**
  * @author Binary Wang(https://github.com/binarywang)

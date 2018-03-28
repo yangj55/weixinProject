@@ -1,6 +1,5 @@
-package com.github.binarywang.demo.wechat.config;
+package com.ktv.mengxiacheng.config;
 
-import com.github.binarywang.demo.wechat.handler.*;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.mp.api.WxMpConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
@@ -13,6 +12,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.ktv.mengxiacheng.handler.*;
 
 /**
  * wechat mp configuration

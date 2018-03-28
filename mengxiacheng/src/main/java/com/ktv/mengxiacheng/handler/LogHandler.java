@@ -1,4 +1,4 @@
-package com.github.binarywang.demo.wechat.handler;
+package com.ktv.mengxiacheng.handler;
 
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -6,21 +6,20 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.springframework.stereotype.Component;
 
+import com.ktv.mengxiacheng.wechat.utils.JsonUtils;
+
 import java.util.Map;
 
 /**
- * 门店审核事件处理
- *
  * @author Binary Wang(https://github.com/binarywang)
  */
 @Component
-public class StoreCheckNotifyHandler extends AbstractHandler {
-
+public class LogHandler extends AbstractHandler {
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
                                     Map<String, Object> context, WxMpService wxMpService,
                                     WxSessionManager sessionManager) {
-        // TODO 处理门店审核事件
+        this.logger.info("\n接收到请求消息，内容：{}", JsonUtils.toJson(wxMessage));
         return null;
     }
 

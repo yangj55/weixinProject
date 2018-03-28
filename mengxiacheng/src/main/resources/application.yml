@@ -12,7 +12,8 @@ wechat:
 
 spring: 
   datasource: 
-    url: jdbc:sqlserver://localhost:1433;DatabaseName=MXC
+    #url: jdbc:sqlserver://localhost:1433;DatabaseName=MXC
+    url: jdbc:sqlserver://103.46.128.47:18181;DatabaseName=MXC
     username: sa
     password: yangjin2996
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
